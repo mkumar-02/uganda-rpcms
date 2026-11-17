@@ -1,0 +1,26 @@
+apiVersion: v2
+name: openg2p-refugee-registry
+description: |
+  OpenG2P Refugee Registry (Uganda RPCMS) — thin package over the shared
+  openg2p-registry chart. Supplies refugee images and values overlay.
+type: application
+version: 0.0.0-develop
+appVersion: "develop"
+
+keywords:
+  - openg2p
+  - registry
+  - refugee-registry
+  - uganda-rpcms
+home: https://openg2p.org
+sources:
+  - https://github.com/OpenG2P/registry-platform
+maintainers:
+  - name: Technoforte / OpenG2P
+    email: info@openg2p.org
+
+dependencies:
+  - name: openg2p-registry
+    alias: registry
+    version: 0.0.0-develop.716
+    repository: https://openg2p.github.io/openg2p-helm

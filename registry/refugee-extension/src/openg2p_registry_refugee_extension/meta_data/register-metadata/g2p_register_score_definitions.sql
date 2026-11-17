@@ -1,0 +1,1 @@
+-- Score definitions reserved for later (e.g. self-reliance index as a computed score).

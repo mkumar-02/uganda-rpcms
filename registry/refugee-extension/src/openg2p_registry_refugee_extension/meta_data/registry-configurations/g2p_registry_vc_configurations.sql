@@ -1,0 +1,2 @@
+-- VC configurations intentionally empty for RPCMS phase 1.
+-- ProGres authentication is Yes/No only; no eKYC / VC issuance from ProGres data.

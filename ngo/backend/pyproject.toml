@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openg2p-rpcms-ngo-api"
+description = "Uganda RPCMS partner onboarding API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MPL-2.0" }
+authors = [
+  { name = "Technoforte / OpenG2P", email = "info@openg2p.org" },
+]
+dependencies = [
+  "openg2p-fastapi-common",
+  "sqlalchemy[asyncio] >=2.0,<2.1",
+  "asyncpg",
+  "psycopg2",
+  "httpx",
+  "pydantic-settings",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://openg2p.org"
+Documentation = "https://docs.openg2p.org/"
+
+[tool.hatch.version]
+path = "src/openg2p_rpcms_ngo_api/__init__.py"

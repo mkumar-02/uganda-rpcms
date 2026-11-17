@@ -1,0 +1,1 @@
+-- External data-model mappings (e.g. DCI) reserved for later RPCMS integrations.

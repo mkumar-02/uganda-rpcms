@@ -1,0 +1,35 @@
+# One block per register (checked by test/test_register_config.py).
+
+- variable: global.registers.refugee.connector
+  description: How PBMS reads the refugee register. db queries the registry database. dci POSTs a DCI search to the URL in the connection string.
+  type: enum
+  options:
+    - db
+    - dci
+  default: db
+  label: Refugee Register Connector
+  group: Refugee Register
+
+- variable: global.registers.refugee.connectionString
+  description: "db: postgresql://user:pass@host:5432/dbname. dci: full search URL. Leave empty if unused."
+  type: password
+  default: 'postgresql://registry_user:CHANGE_ME@{{ .Values.global.postgresqlHost }}:5432/registry'
+  label: Refugee Register Connection String
+  group: Refugee Register
+
+- variable: global.registers.household.connector
+  description: How PBMS reads the household register.
+  type: enum
+  options:
+    - db
+    - dci
+  default: db
+  label: Household Register Connector
+  group: Household Register
+
+- variable: global.registers.household.connectionString
+  description: "db: postgresql://user:pass@host:5432/dbname. dci: full search URL. Leave empty if unused."
+  type: password
+  default: 'postgresql://registry_user:CHANGE_ME@{{ .Values.global.postgresqlHost }}:5432/registry'
+  label: Household Register Connection String
+  group: Household Register

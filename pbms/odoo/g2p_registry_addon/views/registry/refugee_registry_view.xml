@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_g2p_refugee_registry" model="ir.actions.act_window">
+        <field name="name">Refugee Registry</field>
+        <field name="res_model">g2p.register.refugees</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_g2p_refugee_registry_form" model="ir.ui.view">
+        <field name="name">g2p.register.refugees.form</field>
+        <field name="model">g2p.register.refugees</field>
+        <field name="arch" type="xml">
+            <form string="Refugee Registry" create="0">
+                <sheet>
+                    <group string="Identity">
+                        <field name="internal_record_id"/>
+                        <field name="functional_record_id"/>
+                        <field name="record_name"/>
+                        <field name="record_status"/>
+                        <field name="progres_id"/>
+                        <field name="progres_id_valid_to"/>
+                    </group>
+                    <group string="Person">
+                        <field name="first_name"/>
+                        <field name="middle_name"/>
+                        <field name="last_name"/>
+                        <field name="gender"/>
+                        <field name="birth_date"/>
+                        <field name="estimated_age"/>
+                        <field name="marital_status"/>
+                        <field name="language_spoken"/>
+                        <field name="education_level"/>
+                        <field name="has_personal_phone"/>
+                        <field name="registration_date"/>
+                    </group>
+                    <group string="Displacement">
+                        <field name="country_of_origin"/>
+                        <field name="arrival_date"/>
+                        <field name="displacement_status"/>
+                        <field name="settlement_code"/>
+                        <field name="zone_code"/>
+                        <field name="disabled"/>
+                        <field name="disability_type"/>
+                        <field name="disability_severity"/>
+                    </group>
+                    <group string="Geo">
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                        <field name="country_code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_g2p_refugee_registry_tree" model="ir.ui.view">
+        <field name="name">g2p.register.refugees.tree</field>
+        <field name="model">g2p.register.refugees</field>
+        <field name="arch" type="xml">
+            <tree string="Refugee Registry" create="0">
+                <field name="progres_id"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="gender"/>
+                <field name="settlement_code"/>
+                <field name="zone_code"/>
+                <field name="record_status"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

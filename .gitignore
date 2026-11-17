@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local clones of upstream OpenG2P repos for reference only
+.ref/

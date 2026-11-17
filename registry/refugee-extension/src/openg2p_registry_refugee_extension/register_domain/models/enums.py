@@ -1,0 +1,57 @@
+from enum import StrEnum
+
+
+class DisabilityTypeEnum(StrEnum):
+    VISION = "VISION"
+    HEARING = "HEARING"
+    MOBILITY = "MOBILITY"
+    COGNITION = "COGNITION"
+    SELF_CARE = "SELF_CARE"
+    COMMUNICATION = "COMMUNICATION"
+
+
+class DisabilitySeverityEnum(StrEnum):
+    NO_DIFFICULTY = "NO_DIFFICULTY"
+    SOME_DIFFICULTY = "SOME_DIFFICULTY"
+    A_LOT_OF_DIFFICULTY = "A_LOT_OF_DIFFICULTY"
+    CANNOT_DO_AT_ALL = "CANNOT_DO_AT_ALL"
+
+
+class EducationalLevelEnum(StrEnum):
+    ILLITERATE = "ILLITERATE"
+    CAN_READ_AND_WRITE = "CAN_READ_AND_WRITE"
+    NON_FORMAL = "NON_FORMAL"
+    NEVER_ATTEND = "NEVER_ATTEND"
+    PRIMARY = "PRIMARY"
+    SECONDARY = "SECONDARY"
+    TERTIARY = "TERTIARY"
+    HIGHER_EDUCATION = "HIGHER_EDUCATION"
+
+
+class RelationshipToTheHeadEnum(StrEnum):
+    SELF = "SELF"
+    SPOUSE = "SPOUSE"
+    CHILD = "CHILD"
+    PARENT = "PARENT"
+    SIBLING = "SIBLING"
+    OTHER_RELATIVE = "OTHER_RELATIVE"
+    NON_RELATIVE = "NON_RELATIVE"
+
+
+class DisplacementStatusEnum(StrEnum):
+    REFUGEE = "REFUGEE"
+    ASYLUM_SEEKER = "ASYLUM_SEEKER"
+    OTHER_OF_CONCERN = "OTHER_OF_CONCERN"
+
+
+class MainFoodSourceEnum(StrEnum):
+    ASSISTANCE_ONLY = "ASSISTANCE_ONLY"
+    OWN_PRODUCTION_AND_ASSISTANCE = "OWN_PRODUCTION_AND_ASSISTANCE"
+    MARKET_INCOME = "MARKET_INCOME"
+
+
+class ChildrenInSchoolEnum(StrEnum):
+    NONE = "0"
+    ONE_TO_TWO = "1-2"
+    THREE_TO_FOUR = "3-4"
+    FIVE_OR_MORE = "5+"

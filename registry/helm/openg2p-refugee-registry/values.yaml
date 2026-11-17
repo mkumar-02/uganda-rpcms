@@ -1,0 +1,30 @@
+# Refugee Registry — values overlay for openg2p-registry.
+#
+#     helm dependency build ./registry/helm/openg2p-refugee-registry
+#     helm install refugee-registry ./registry/helm/openg2p-refugee-registry
+
+global:
+  registryVariant: 'refugee-registry'
+  registryHostname: '{{ .Release.Name }}.{{ tpl (.Values.global.baseDomain | default "openg2p.org") $ }}'
+  baseDomain: '{{ .Release.Namespace }}.openg2p.org'
+
+registry:
+  staffApi:
+    image:
+      repository: openg2p/openg2p-refugee-registry-staff-api
+      tag: 0.0.0-develop
+  agentPortalApi:
+    image:
+      repository: openg2p/openg2p-refugee-registry-agent-portal-api
+      tag: 0.0.0-develop
+  partnerApi:
+    image:
+      repository: openg2p/openg2p-refugee-registry-partner-api
+      tag: 0.0.0-develop
+  celeryWorker:
+    image:
+      repository: openg2p/openg2p-refugee-registry-celery-worker
+      tag: 0.0.0-develop
+
+  # Extension module selected inside the images via REGISTRY_EXTENSION_MODULE.
+  # Seed SQL under refugee-extension meta_data is applied by the platform db-seed job.

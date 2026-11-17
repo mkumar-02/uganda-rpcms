@@ -1,0 +1,39 @@
+# Values overlay for openg2p-pbms-platform (Uganda RPCMS).
+#
+#     helm dependency build ./helm/openg2p-rpcms-pbms
+#     helm upgrade --install rpcms-pbms ./helm/openg2p-rpcms-pbms --namespace pbms --create-namespace
+
+global:
+  registers:
+    refugee:
+      connector: db
+      connectionString: 'postgresql://registry_user:CHANGE_ME@{{ .Values.global.postgresqlHost }}:5432/registry'
+    household:
+      connector: db
+      connectionString: 'postgresql://registry_user:CHANGE_ME@{{ .Values.global.postgresqlHost }}:5432/registry'
+
+registryAdapterEnv: &registryAdapterEnv
+  REGISTRY_ADAPTERS_REFUGEE_CONNECTOR: '{{ .Values.global.registers.refugee.connector }}'
+  REGISTRY_ADAPTERS_REFUGEE_CONNECTION_STRING: '{{ tpl .Values.global.registers.refugee.connectionString $ }}'
+  REGISTRY_ADAPTERS_HOUSEHOLD_CONNECTOR: '{{ .Values.global.registers.household.connector }}'
+  REGISTRY_ADAPTERS_HOUSEHOLD_CONNECTION_STRING: '{{ tpl .Values.global.registers.household.connectionString $ }}'
+
+pbms:
+  odoo:
+    image:
+      repository: openg2p/openg2p-rpcms-pbms-odoo
+      tag: 0.0.0-develop
+  celeryWorkers:
+    image:
+      repository: openg2p/openg2p-rpcms-pbms-celery
+      tag: 0.0.0-develop
+    envVars: *registryAdapterEnv
+  beatProducers:
+    image:
+      repository: openg2p/openg2p-rpcms-pbms-celery
+      tag: 0.0.0-develop
+  staffPortalApi:
+    image:
+      repository: openg2p/openg2p-rpcms-pbms-staff-api
+      tag: 0.0.0-develop
+    envVars: *registryAdapterEnv

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_g2p_register_household" model="ir.actions.act_window">
+        <field name="name">Household Registry</field>
+        <field name="res_model">g2p.register.households</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_g2p_register_household_form" model="ir.ui.view">
+        <field name="name">g2p.register.households.form</field>
+        <field name="model">g2p.register.households</field>
+        <field name="arch" type="xml">
+            <form string="Household Registry" create="0">
+                <sheet>
+                    <group string="Identity">
+                        <field name="internal_record_id"/>
+                        <field name="functional_record_id"/>
+                        <field name="record_name"/>
+                        <field name="record_status"/>
+                        <field name="household_head"/>
+                    </group>
+                    <group string="Composition">
+                        <field name="size_of_group"/>
+                        <field name="number_of_children"/>
+                        <field name="number_of_elderly_members"/>
+                        <field name="number_of_female_members"/>
+                        <field name="number_of_male_members"/>
+                    </group>
+                    <group string="Location">
+                        <field name="settlement_code"/>
+                        <field name="zone_code"/>
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                        <field name="country_code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_g2p_register_household_tree" model="ir.ui.view">
+        <field name="name">g2p.register.households.tree</field>
+        <field name="model">g2p.register.households</field>
+        <field name="arch" type="xml">
+            <tree string="Household Registry" create="0">
+                <field name="functional_record_id"/>
+                <field name="household_head"/>
+                <field name="size_of_group"/>
+                <field name="settlement_code"/>
+                <field name="zone_code"/>
+                <field name="record_status"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

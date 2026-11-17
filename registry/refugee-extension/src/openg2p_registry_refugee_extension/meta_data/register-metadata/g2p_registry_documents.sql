@@ -1,0 +1,2 @@
+-- Document type bindings for refugee / household registers (phase 1: none required).
+-- Add refugee ID card / attestation document types here when OPM confirms the list.

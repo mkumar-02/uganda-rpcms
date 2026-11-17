@@ -1,0 +1,35 @@
+apiVersion: v2
+name: openg2p-rpcms-pbms
+description: |
+  Uganda RPCMS PBMS — values overlay on openg2p-pbms-platform.
+  Adds Refugee + Household registry adapters and Odoo register views.
+type: application
+
+version: 0.0.0-develop
+appVersion: "develop"
+
+keywords:
+  - openg2p
+  - pbms
+  - uganda
+  - rpcms
+home: https://openg2p.org
+icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
+sources:
+  - https://github.com/OpenG2P/pbms
+  - https://github.com/OpenG2P/pbms-connectors
+maintainers:
+  - name: Technoforte / OpenG2P
+    email: info@openg2p.org
+
+# Must equal ARG PBMS_VERSION in docker/*/Dockerfile.
+dependencies:
+  - name: openg2p-pbms-platform
+    alias: pbms
+    version: 0.0.0-develop.22
+    repository: https://openg2p.github.io/openg2p-helm
+
+annotations:
+  catalog.cattle.io/display-name: "Uganda RPCMS PBMS"
+  catalog.cattle.io/certified: partner
+  catalog.cattle.io/kube-version: ">=1.23.0-0"
